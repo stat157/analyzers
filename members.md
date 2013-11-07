@@ -2,7 +2,6 @@
 | -----|:------:| :-----: |
 | John Risko | <snowstorm1@berkeley.edu> | <a href = "https://github.com/johnrisko">johnrisko</a> |
 | Laura Cunningham | <lccunningham@berkeley.edu> | <a href = "https://github.com/lauracunningham">lauraccunningham</a> |
-| Qi Zhang | <qi.zhang@berkeley.edu> | <a href = "https://github.com/qi-zhang">qi-zhang</a> |
 | Khoa Tran | <khoatran@berkeley.edu> | <a href = "https://github.com/kqdtran">kqdtran</a> |
 | Jody Zhang | <jodyzhang@berkeley.edu> | <a href = "https://github.com/j-zhang">j-zhang</a> |
 | Yee Tung Man | <aliceman@berkeley.edu> | <a href = "https://github.com/amx01">amx01</a> |
