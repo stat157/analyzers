@@ -29,8 +29,7 @@ from pprint import pprint
 # reliable way to host our csv file later
 data = read_csv("https://piazza.com/class_profile/get_resource/hkyfvggfat84vl/hnnxl94gqitqb")
 clean_data = data.dropna(axis=0, how='any')
-test_data = clean_data[0:20]
-test_data
+p
 
 # <markdowncell>
 
