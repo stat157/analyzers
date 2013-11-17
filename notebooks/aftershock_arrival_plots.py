@@ -12,6 +12,7 @@ import pandas as pd
 from pandas import read_csv
 from dateutil import parser
 from pprint import pprint
+from datetime import timedelta
 
 # <codecell>
 
@@ -72,6 +73,43 @@ for i in range(len(test_dt) - 5):
 # <codecell>
 
 assert len(points) == len(mags)
+
+# <codecell>
+
+points_ts = []
+for i in range(len(points)):
+    points_ts.append(timedelta.total_seconds(points[i]))
+
+type(points_ts)
+
+# <codecell>
+
+points_ts = [timedelta.total_seconds(point) for point in points]
+
+type(points_ts)
+
+# <codecell>
+
+points_df = pd.DataFrame(points_ts)
+points_df[0:10]
+print type(points_df)
+
+# <codecell>
+
+mags_df = pd.DataFrame(mags)
+mags_df[0:10]
+print type(mags_df)
+
+# <codecell>
+
+df = pd.DataFrame({'mags': mags, 'timedeltas': points_ts})
+
+# <codecell>
+
+from ggplot import *
+
+print ggplot(df, aes('mags', 'timedeltas')) + \
+  geom_point(colour='steelblue')
 
 # <codecell>
 
