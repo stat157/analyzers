@@ -21,7 +21,7 @@ MAG = clean_catalog.MAG
 
 # <codecell>
 
-test_catalog = clean_catalog
+test_catalog = clean_catalog[0:20]
 
 # <codecell>
 
@@ -52,6 +52,29 @@ print bins
 
 # <codecell>
 
+test_mag = test_catalog.MAG
+test_dt = test_catalog.DATETIME
+test_mag
+
+# <codecell>
+
+mags = [mag for mag in test_mag for rep in range(5)]
+mags = mags[:-25]
+
+# <codecell>
+
+points = []
+for i in range(len(test_dt) - 5):
+    current = test_dt[i]
+    for j in range(1, 6):
+        points.append(test_dt[i+j] - current)
+
+# <codecell>
+
+assert len(points) == len(mags)
+
+# <codecell>
+
 import matplotlib.pyplot as plt
 print freq
 plt.bar([0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5], freq)
@@ -59,7 +82,7 @@ plt.show()
 
 # <codecell>
 
-p = ggplot(aes(x='bins'), data = 
+# p = ggplot(aes(x='bins'), data = 
 
 # <codecell>
 
