@@ -15,3 +15,16 @@ sudo pip install virtualenv
 
 ```
 
+#####ggplot Dependencies
+```
+sudo pip install ggplot
+```
+
+```
+sudo pip install matplotlib
+sudo pip install pandas
+sudo apt-get install numpy
+sudo apt-get install scipy
+sudo pip install statsmodels
+sudo pip install patsy
+```
