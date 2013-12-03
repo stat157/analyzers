@@ -47,3 +47,16 @@ pip install scipy
 pip install patsy
 pip install statsmodels
 ```
+
+Set up Git
+https://help.github.com/articles/set-up-git
+
+If you can't pull because of ssh public key problem, do
+
+```
+git remote rm origin
+git remote add origin https://github.com/stat157/analyzers.git
+git pull origin master
+```
+
+to change between SSH and HTTPS
