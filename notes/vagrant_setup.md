@@ -39,6 +39,9 @@ pip install scipy
 pip install matplotlib
 pip install pandas
 pip install sympy
-pip install nose
-pip install ipython
 ```
+```
+sudo apt-get install --upgrade g++
+pip install ipython[all]
+```
+Check to see if a C++ compiler is installed (may be required for your ```ipython``` installation), as it is a dependency for ```pyzmq```; all the dependencies of ```ipython``` will be installed by including ```[all]```
