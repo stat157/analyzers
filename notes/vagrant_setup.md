@@ -24,24 +24,50 @@ sudo pip install statsmodels
 sudo pip install patsy
 ```
 
+-----------------------------
 ##### virtualenv dependencies
-######Install virtualenv
+
+######Update your Ubuntu VM with python-dev first. Make sure to have the C/C++ compilers installed/updated.
+Also install the necessary packages for scipy/matplotlib (see http://stackoverflow.com/questions/9829175/pip-install-matplotlib-error-with-virtualenv 
+for more details)
+```
+sudo apt-get update
+sudo apt-get install python-dev
+sudo apt-get install libfreetype6-dev
+sudo apt-get install --upgrade gcc
+sudo apt-get install --upgrade g++
+sudo apt-get build-dep python-matplotlib
+sudo apt-get build-dep python-scipy
+```
+
+######Install virtualenv (and perhaps the wrapper for easier use)
 ```
 pip install virtualenv
 pip install virtualenvwrapper
-sudo apt-get update
-sudo apt-get install python-dev
 ```
-Try to be OS dependent and use ```pip```
+
+Using `virtualenv`:
+* Create a new virtual environment:
 ```
-pip install numpy
-pip install scipy
-pip install matplotlib
-pip install pandas
-pip install sympy
+virtualenv stat157
 ```
+* Activate it
 ```
-sudo apt-get install --upgrade g++
+source stat157/bin/activate
+```
+
+Using `virtualenvwrapper` (which is much easier, IMO)
+```
+mkvirtualenv stat157
+```
+
+Install the necessary dependencies with pip. Use `[all]` to install everything needed in one go!
+```
 pip install ipython[all]
+pip install pandas[all]
+pip install matplotlib[all]
+pip install ggplot[all]
+pip install scipy
+pip install patsy
+pip install statsmodels
 ```
-Check to see if a C++ compiler is installed (may be required for your ```ipython``` installation), as it is a dependency for ```pyzmq```; all the dependencies of ```ipython``` will be installed by including ```[all]```
