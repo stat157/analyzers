@@ -60,3 +60,7 @@ git pull origin master
 ```
 
 to change between SSH and HTTPS
+
+Make your life easier, `alias ipy='ipython notebook --ip=0.0.0.0 --no-browser --pylab=inline --script'`. 
+This will alias all the extra arguments for IPython notebook under `ipy`. Then inside the `notebooks` 
+directory, run `ipy` and navigate to port 8888 on your local machine.
