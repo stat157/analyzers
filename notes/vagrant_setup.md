@@ -32,13 +32,11 @@ workon 157
 ```
  You should see the prompt change from
 `vagrant@precise64:~/analyzers$` to `(157)vagrant@precise64:~/analyzers$`
- which means that you're now in the virtual environment!
-
-Now type
+ which means that you're now in the virtual environment! Now type
 ```sh
 alias ipy='ipython notebook --ip=0.0.0.0 --no-browser --pylab=inline --script'
 ```
-Now instead of typing all the extra arguments for IPython notebook, you can just type `ipy`. Inside the `notebooks` directory (which should be the current directory), type `ipy` and navigate to port 7777 on your local machine.  (That means in a web browser window, navigate to 127.0.0.1:7777).
+so instead of typing all the extra arguments for IPython notebook, you can just type `ipy`. Inside the `notebooks` directory (which should be the current directory), type `ipy` and navigate to port 7777 on your local machine.  (That means in a web browser window, navigate to 127.0.0.1:7777).
 
 
 ### Setting up the Virtual Machine
