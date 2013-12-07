@@ -38,8 +38,11 @@ alias ipy='ipython notebook --ip=0.0.0.0 --no-browser --pylab=inline --script'
 ```
 so instead of typing all the extra arguments for IPython notebook, you can just type `ipy`. Inside the `notebooks` directory (which should be the current directory), type `ipy` and navigate to port 7777 on your local machine.  (That means in a web browser window, navigate to 127.0.0.1:7777).
 
+Since you've already pulled the latest version of the [analyzers repo](https://github.com/stat157/analyzers), you'll see the most recent version of our ipython notebooks.  Check out the [aftershock arrival times notebook](https://github.com/stat157/analyzers/blob/master/notebooks/aftershock_arrival_plots.ipynb), edit it, and run it!  Have fun!
 
-### Setting up the Virtual Machine
+
+
+### Behind the Scenes: How we set up the packaged Virtual Machine
 --------------------------------------------------------------------------------------------------------------
 
 ##### virtualenv dependencies
