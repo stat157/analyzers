@@ -29,19 +29,24 @@ To start up the analyzers repo, run
 ```
 cd analyzers/notebooks
 
-workon 157  # this is to start the virtual environment with everything installed. 
-# You should see the change from
-# vagrant@precise64:~/analyzers$
-# to
-# (157)vagrant@precise64:~/analyzers$
-#, which means that you're now in the virtual environment
-
-ipython notebook --ip=0.0.0.0 --no-browser --pylab=inline
+workon 157
 ```
+to start the virtual environment with everything installed.  You should see the change from
+```sh
+vagrant@precise64:~/analyzers$
+```
+to
+```sh
+(157)vagrant@precise64:~/analyzers$
+```
+which means that you're now in the virtual environment!
 
-Make your life easier, `alias ipy='ipython notebook --ip=0.0.0.0 --no-browser --pylab=inline --script'`. 
+Now run
+```sh
+alias ipy='ipython notebook --ip=0.0.0.0 --no-browser --pylab=inline --script'
+```
 This will alias all the extra arguments for IPython notebook under `ipy`. Then inside the `notebooks` 
-directory, run `ipy` and navigate to port 8888 on your local machine.
+directory (which should be the current directory), type `ipy` and navigate to port 7777 on your local machine.  (That means in a web browser window, navigate to 127.0.0.1:7777).
 
 
 ### Setting up the Virtual Machine
