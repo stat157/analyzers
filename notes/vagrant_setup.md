@@ -39,11 +39,9 @@ workon 157  # this is to start the virtual environment with everything installed
 ipython notebook --ip=0.0.0.0 --no-browser --pylab=inline
 ```
 
-To make your life easier
-```
-alias ipy='ipython notebook --ip=0.0.0.0 --no-browser --pylab=inline --script'
-```
-then you can just type ```ipy``` to start the ipython notebook.
+Make your life easier, `alias ipy='ipython notebook --ip=0.0.0.0 --no-browser --pylab=inline --script'`. 
+This will alias all the extra arguments for IPython notebook under `ipy`. Then inside the `notebooks` 
+directory, run `ipy` and navigate to port 8888 on your local machine.
 
 
 ### Setting up the Virtual Machine
@@ -95,20 +93,3 @@ pip install scipy
 pip install patsy
 pip install statsmodels
 ```
-
-Set up Git
-https://help.github.com/articles/set-up-git
-
-If you can't pull because of ssh public key problem, do
-
-```
-git remote rm origin
-git remote add origin https://github.com/stat157/analyzers.git
-git pull origin master
-```
-
-to change between SSH and HTTPS
-
-Make your life easier, `alias ipy='ipython notebook --ip=0.0.0.0 --no-browser --pylab=inline --script'`. 
-This will alias all the extra arguments for IPython notebook under `ipy`. Then inside the `notebooks` 
-directory, run `ipy` and navigate to port 8888 on your local machine.
