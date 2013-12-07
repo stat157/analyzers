@@ -1,3 +1,51 @@
+### Setting up Vagrant
+
+#####Prior to starting, make sure your [version of Vagrant](http://downloads.vagrantup.com/) is at least 1.1.0. 
+
+Download the Vagrant box here: https://www.dropbox.com/s/5rgfq8nedjxgm0c/package.box (1.6 Gb)
+
+After you download it, run the following commands in the same directory that you downloaded the Vagrant box
+```
+$ vagrant box add 157box package.box
+$ vagrant init 157box
+$ vagrant up
+$ vagrant ssh
+```
+
+Using a text editor (such as emacs or vi), edit the Vagrantfile to add these two lines below line 22
+```
+config.vm.network :forwarded_port, guest: 80, host: 8080
+config.vm.network :forwarded_port, guest: 8888, host: 7777
+```
+
+The analyzers directory will not be the current version. You'll need to pull the current version from the repository using git. Set up git in the VM by following git set-up instructions [here](https://help.github.com/articles/set-up-git#platform-linux). Then, execute the following commands:
+```sh
+git remote rm origin
+git remote add https://github.com/stat157/analyzers.git
+git pull origin master
+```
+
+To start up the analyzers repo, run
+```
+cd analyzers/notebooks
+
+workon 157  # this is to start the virtual environment with everything installed. 
+# You should see the change from
+# vagrant@precise64:~/analyzers$
+# to
+# (157)vagrant@precise64:~/analyzers$
+#, which means that you're now in the virtual environment
+
+ipython notebook --ip=0.0.0.0 --no-browser --pylab=inline
+```
+
+To make your life easier
+```
+alias ipy='ipython notebook --ip=0.0.0.0 --no-browser --pylab=inline --script'
+```
+then you can just type ```ipy``` to start the ipython notebook.
+
+
 ### Setting up the Virtual Machine
 --------------------------------------------------------------------------------------------------------------
 
