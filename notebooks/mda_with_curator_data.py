@@ -29,7 +29,6 @@ from pprint import pprint
 # reliable way to host our csv file later
 data = read_csv("https://piazza.com/class_profile/get_resource/hkyfvggfat84vl/hnnxl94gqitqb")
 clean_data = data.dropna(axis=0, how='any')
-p
 
 # <markdowncell>
 
@@ -37,17 +36,16 @@ p
 
 # <codecell>
 
-test_mag = test_data['MAG']
-test_mag = test_mag.tolist()
-test_mag
+quake_mag = clean_data['MAG'].tolist()
+quake_mag[0:10]
 
 # <codecell>
 
-test_date = test_data['YYYY/MM/DD']
-test_time = test_data['HH:mm:SS.ss']
+quake_date = clean_data['YYYY/MM/DD']
+quake_time = clean_data['HH:mm:SS.ss']
 
-test_dt = [parser.parse(date + " " + time) for date, time in zip(test_date, test_time)]
-test_dt
+quake_dt = [parser.parse(date + " " + time) for date, time in zip(quake_date, quake_time)]
+quake_dt[0:10]
 
 # <markdowncell>
 
@@ -84,16 +82,16 @@ def mda(mag, dt, tau=0.7, funct=basic_mda):
 
 # <codecell>
 
-alarm_ranges = mda(test_mag, test_dt)
-alarm_ranges
+alarm_ranges = mda(quake_mag, quake_dt)
+alarm_ranges[0:10]
 
 # <codecell>
 
-data_we_need = {'Latitude': test_data['LAT'], 'Longitude': test_data['LON'], 
+data_we_need = {'Latitude': clean_data['LAT'], 'Longitude': clean_data['LON'], 
                 'Alarm Begins': [alarm[0] for alarm in alarm_ranges], 
                 'Alarm Ends': [alarm[1] for alarm in alarm_ranges]}
 dframe = pd.DataFrame(data_we_need)
-dframe
+dframe[0:10]
 
 # <codecell>
 
