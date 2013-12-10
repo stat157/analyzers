@@ -21,7 +21,7 @@ config.vm.network :forwarded_port, guest: 8888, host: 7777
 The analyzers directory will not be the current version. You'll need to pull the current version from the repository using git. Set up git in the VM by following git set-up instructions [here](https://help.github.com/articles/set-up-git#platform-linux). Then, execute the following commands:
 ```sh
 git remote rm origin
-git remote add https://github.com/stat157/analyzers.git
+git remote add origin https://github.com/stat157/analyzers.git
 git pull origin master
 ```
 
