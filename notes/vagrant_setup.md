@@ -44,6 +44,15 @@ Since you've already pulled the latest version of the [analyzers repo](https://g
 
 ### Behind the Scenes: How we set up the packaged Virtual Machine
 --------------------------------------------------------------------------------------------------------------
+##### start with a raring machine
+
+Follow [these instructions](https://github.com/stat157/homework-01) to set up VirtualBox but instead of precise, download a [raring disk image](http://releases.ubuntu.com/precise/) -- choose "64-bit PC (AMD64) desktop CD"
+
+Then [download and install vagrant](http://vagrantup.com/).  Using a text editor (such as emacs or vi), edit the Vagrantfile to add these two lines below line 22
+```
+config.vm.network :forwarded_port, guest: 80, host: 8080
+config.vm.network :forwarded_port, guest: 8888, host: 7777
+```
 
 ##### virtualenv dependencies
 
